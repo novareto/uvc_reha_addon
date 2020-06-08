@@ -52,9 +52,9 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [{%- if cookiecutter.command_line_interface|lower == 'click' %}'Click>=6.0',{%- endif %} ]
+requirements = "" 
 
-setup_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest-runner',{%- endif %} ]
+setup_requirements = "" 
 
 setup(
     name=about["__title__"],
@@ -70,13 +70,9 @@ setup(
     url=about["__url__"],
     keywords=KEYWORDS,
     classifiers=CLASSIFIERS,
-    {%- if 'no' not in cookiecutter.command_line_interface|lower %}
     entry_points={
-        'console_scripts': [
-            '{{ cookiecutter.project_slug }}={{ cookiecutter.project_slug }}.cli:main',
-        ],
+        'z3c.autoinclude.plugin': 'target=uvcsite',
     },
-    {%- endif %}
     install_requires=requirements,
     include_package_data=True,
     packages=find_packages(include=['{{ cookiecutter.project_slug }}']),
