@@ -28,13 +28,18 @@ setup(
     long_description=readme + '\n\n' + history,
     long_description_content_type="text/x-rst",
     url="https://git.bg-kooperation.de",
-    entry_points={
-        'docmanager.plugin': 'target=uvcsite',
-    },
     install_requires=requirements,
     include_package_data=True,
     packages=find_packages(include=['{{ cookiecutter.project_slug }}']),
     setup_requires=setup_requirements,
+    entry_points={
+        'fanstatic.libraries': [
+            ' {{ cookiecutter.project_slug }}  = {{ cookiecutter.project_slug }}.app:library',
+        ],
+        'docmanager.plugins': [
+            '{{ cookiecutter.package_name }} = {{ cookiecutter.project_slug }}'
+        ],
+    },
     test_suite='tests',
     zip_safe=False,
 )
