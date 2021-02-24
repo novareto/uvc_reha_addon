@@ -34,9 +34,9 @@ setup(
     setup_requires=setup_requirements,
     entry_points={
         'fanstatic.libraries': [
-            ' {{ cookiecutter.project_slug }}  = {{ cookiecutter.project_slug }}.app:library',
+            '{{ cookiecutter.project_slug }}  = {{ cookiecutter.project_slug }}.app:library',
         ],
-        'docmanager.plugins': [
+        'uvcreha.plugins': [
             '{{ cookiecutter.package_name }} = {{ cookiecutter.project_slug }}'
         ],
     },
