@@ -37,7 +37,7 @@ setup(
             '{{ cookiecutter.project_slug }}  = {{ cookiecutter.project_slug }}.app:library',
         ],
         'uvcreha.plugins': [
-            '{{ cookiecutter.package_name }} = {{ cookiecutter.project_slug }}'
+            '{{ cookiecutter.project_slug}} = {{ cookiecutter.project_slug }}'
         ],
     },
     test_suite='tests',
