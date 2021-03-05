@@ -36,7 +36,7 @@ setup(
         'fanstatic.libraries': [
             '{{ cookiecutter.project_slug }}  = {{ cookiecutter.project_slug }}.app:library',
         ],
-        'uvcreha.plugins': [
+        'reiter.application.modules': [
             '{{ cookiecutter.project_slug}} = {{ cookiecutter.project_slug }}'
         ],
     },
